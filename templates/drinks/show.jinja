@@ -1,0 +1,14 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+
+<body>
+    <h1>Individual Order</h1>
+    <h2>{{ drink.drink_name }}</h2>
+    <p>{{ drink.size }}</p>
+    <p>{{ drink.customer.customer_name }}</p>
+    {% endfor %}
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<body>
+    <h1>Customer Orders</h1>
+    <form action="/drinks" method="POST">
+        <label for="dropdown">Customer Name:</label>
+        <select id="dropdown" name="customer_name">
+            {% for customer in customers %}
+            <option value="{{ customer.id }}">{{ customer.customer_name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="drink">Drink:</label>
+        <input type="text" name="drink" id="drink">
+
+        <label for="dropdown">Size:</label>
+        <select id="dropdown" name="size">
+            {% for drink in drinks %}
+            <option value="{{ drink.size }}">{{ drink.size }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Add Drink">
+    </form>
+
+    {% for drink in drinks %}
+    <div>
+        <a href="/drinks{{drinks.index(drink)}}"><b>{{drink.customer.customer_name}}:</b> 
+    {{ drink.drink_name}} ({{ drink.size}})</div>
+    {% endfor %}
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h1>Books</h1>
+{% for drink in drinks %}
+<ul id="drink-list">
+    <li>
+        <a href="{{drinks.index(drink)}}">{{drink.id}}</a>
+    </li>
+    <li>
+        Size: {{drink.size}}
+    </li>
+    <li>
+        Customer Name: {{drink.customer.customer_name}}
+    </li>
+</ul>
+
+{% endfor %}
+{% endblock %}
