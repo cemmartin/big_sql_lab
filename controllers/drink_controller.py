@@ -53,6 +53,21 @@ def save_drink():
     return redirect("/drinks")
 
 @drink_blueprint.route("/drinks/<index>")
-def drinks_show(index):
-    drink = drink[int(index)]
-    return render_template("drinks/show.jinja", drink=drink, index=index)
+def drink_show():
+    drink_to_show= Drink.query.get(id)
+    return render_template("show.jinja", 
+    drink=drink_to_show)
+
+
+    # drink = drinks[int(index)] #need to check over this bit
+    # return render_template("drinks/show.jinja", drink=drink, index=index)
+
+
+
+# @bat_blueprint.route("/bats/delete/<id>", methods=["POST"])
+# def delete_bat(id):
+    # bat_to_delete = Bat.query.get(id)
+    # if bat_to_delete:
+    #     db.session.delete(bat>to>delete)
+    #     de.session.commit()
+    #     return

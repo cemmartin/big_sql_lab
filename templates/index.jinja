@@ -27,7 +27,7 @@
     {% for drink in drinks %}
     <div>
         <a href="/drinks{{drinks.index(drink)}}"><b>{{drink.customer.customer_name}}:</b> 
-    {{ drink.drink_name}} ({{ drink.size}})</div>
+    {{ drink.drink_name}}, {{ drink.size}}</div>
     {% endfor %}
 
 </body>
